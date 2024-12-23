@@ -12,14 +12,10 @@ const elfLastNames = [
   "Snowdust", "Twinkletoes", "Underwood", "Velvet", "Winterberry", "Xylospark",
   "Yuletide", "Zestwind"
 ];
+
 const elfDisplay = document.querySelector('#elf-name-display')
 const elfEmployees = document.querySelector('#elf-names-list li' )
-// get value from each input field
-// grab name, split into string capturing first letter
-// compare human letter to elf choices array 
-//return match and display in id elf-names-list li
-//overwrite value in h2 on click
-
+const generateBtn = document.querySelector('.generate-btn')
 
 function getNames() {
   const fname = document.getElementById('fname').value.charAt(0)
@@ -65,7 +61,21 @@ function getNames() {
   
 // }
 
-document.querySelector('.generate-btn').addEventListener('click', getNames) 
+generateBtn.addEventListener('click', getNames) 
+
+// Animate elf when names are added
+generateBtn.addEventListener('click', function() {
+  const elfImg = document.querySelector('.elf');
+  elfImg.classList.add('shake');
+
+
+// Remove the class after the animation is done to allow re-triggering
+  setTimeout(() => {
+    elfImg.classList.remove('shake');
+  }, 500); // Match the duration of the animation
+});
+
+
 
 /*
  * 🎅 Task:

@@ -166,12 +166,23 @@ hr {
   display: flex;
   align-items: center;
   gap: 0.5em;  
-  
+
   img {
-    width: 32px;
+    width: 42px;
     height: auto;
   }
 }
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.elf.shake {
+  animation: shake 0.75s;
+  animation-iteration-count: 1;
+}
+
 
 .elf-names-list {
   font-size: 1.2rem;    
