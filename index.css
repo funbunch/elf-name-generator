@@ -67,21 +67,43 @@ main {
   font-weight: 600;
   font-size: 1rem;
   transition: transform 0.2s;
+  position: relative;
+  overflow: hidden;
   letter-spacing: .05em;
+  z-index: 1;
 }
 
 .generate-btn::after {
-  content: url(elf.png);
-  width: 12px;
-  height: auto;
-  display: inline-block;
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* background-color: var(--festive-green); */
+	border-radius: 10rem;
+	z-index: -2;
 }
 
-.generate-btn:hover{
-  transform: scale(1.05);
-  color: var(--text-color);
-  background: var(--festive-red);
-  /* box-shadow: 2px 2px 8px rgba(#333333, 0.5); */
+.generate-btn::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0%;
+	height: 100%;
+	background-color: hsl(0, 100%, 35%);
+	transition: all 0.3s;
+	border-radius: 10rem;
+	z-index: -1;
+}
+
+.generate-btn:hover {
+	color: #fff;
+}
+
+.generate-btn:hover::before {
+	width: 100%;
 }
 
 .generator-section {
