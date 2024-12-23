@@ -162,6 +162,17 @@ hr {
   margin: 0;
 }
 
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;  
+  
+  img {
+    width: 32px;
+    height: auto;
+  }
+}
+
 .elf-names-list {
   font-size: 1.2rem;    
   padding-left:1em;
